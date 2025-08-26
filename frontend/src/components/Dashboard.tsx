@@ -144,7 +144,6 @@ const Dashboard: React.FC = () => {
       <header className="dashboard-header">
         <h1>FlexLiving Reviews Dashboard</h1>
         <p>Manage property reviews and select which ones to display publicly</p>
-        <p style={{color: 'red', fontSize: '12px'}}>API URL: https://property-reviews-production.up.railway.app/api</p>
       </header>
 
       <div className="stats-section">
