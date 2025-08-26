@@ -1,9 +1,6 @@
 import { Review, Property } from './types';
 
-const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:8080/api';
-
-console.log('API_BASE URL:', API_BASE);
-console.log('Environment variables:', process.env);
+const API_BASE = 'https://property-reviews-production.up.railway.app/api';
 
 export const api = {
   getReviews: async (params?: { property?: string; sort?: string; rating?: string }): Promise<Review[]> => {
