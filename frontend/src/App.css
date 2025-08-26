@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background-color: #FFFDF6;
+  color: #5C5C5A;
+  line-height: 1.6;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+:root {
+  --primary-color: #284E4C;
+  --secondary-color: #6B8E7B;
+  --background-color: #FFFDF6;
+  --card-background: #FFFFFF;
+  --text-primary: #2D2D2B;
+  --text-secondary: #5C5C5A;
+  --text-muted: #9B9B9B;
+  --border-color: #E8E8E6;
+  --success-color: #6B8E7B;
+  --warning-color: #D4A574;
+  --shadow: 0 2px 12px rgba(40, 78, 76, 0.08);
+  --radius: 12px;
+}
