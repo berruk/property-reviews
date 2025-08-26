@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { Review } from '../types';
 import { api } from '../api';
@@ -20,7 +20,7 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     applyFilters();
-  }, [reviews, filters]);
+  }, [reviews, filters, applyFilters]);
 
   const fetchReviews = async () => {
     try {
@@ -33,7 +33,7 @@ const Dashboard: React.FC = () => {
     }
   };
 
-  const applyFilters = () => {
+  const applyFilters = useCallback(() => {
     let filtered = reviews;
 
     if (filters.property) {
@@ -56,7 +56,7 @@ const Dashboard: React.FC = () => {
     }
 
     setFilteredReviews(filtered);
-  };
+  }, [reviews, filters]);
 
   const handleApprovalToggle = async (reviewId: string, currentApproval: boolean) => {
     try {

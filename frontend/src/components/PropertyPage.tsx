@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Property } from '../types';
 import { api } from '../api';
@@ -9,11 +9,7 @@ const PropertyPage: React.FC = () => {
   const [property, setProperty] = useState<Property | null>(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchPropertyData();
-  }, [propertyName]);
-
-  const fetchPropertyData = async () => {
+  const fetchPropertyData = useCallback(async () => {
     try {
       const properties = await api.getProperties();
       const decodedPropertyName = decodeURIComponent(propertyName || '');
@@ -27,7 +23,11 @@ const PropertyPage: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [propertyName]);
+
+  useEffect(() => {
+    fetchPropertyData();
+  }, [fetchPropertyData]);
 
   if (loading) {
     return <div className="loading">Loading property details...</div>;
