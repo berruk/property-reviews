@@ -18,10 +18,6 @@ const Dashboard: React.FC = () => {
     fetchReviews();
   }, []);
 
-  useEffect(() => {
-    applyFilters();
-  }, [reviews, filters, applyFilters]);
-
   const fetchReviews = async () => {
     try {
       const data = await api.getReviews();
@@ -57,6 +53,10 @@ const Dashboard: React.FC = () => {
 
     setFilteredReviews(filtered);
   }, [reviews, filters]);
+
+  useEffect(() => {
+    applyFilters();
+  }, [reviews, filters, applyFilters]);
 
   const handleApprovalToggle = async (reviewId: string, currentApproval: boolean) => {
     try {
