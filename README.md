@@ -117,12 +117,17 @@ For production, recommend caching Google reviews and updating periodically rathe
 
 ## Running the Application
 
+### Local Development
 1. Start backend: `cd backend && go run main.go`
 2. Start frontend: `cd frontend && npm start`  
 3. Open http://localhost:3000/dashboard
 4. Use the dashboard to manage reviews
 5. Click property cards to navigate to individual property pages
 6. Approve reviews in dashboard to see them appear on property pages
+
+### Live Demo
+- **Frontend Dashboard**: https://frontend-production-e8e5.up.railway.app/dashboard
+- **Backend API**: https://property-reviews-production.up.railway.app/api/reviews/hostaway
 
 ## Testing Features
 
